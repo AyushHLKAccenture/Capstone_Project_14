@@ -1,0 +1,19 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: ayush-app
+spec:
+  replicas: 2
+  selector:
+    matchLabels:
+      app: ayush-app
+  template:
+    metadata:
+      labels:
+        app: ayush-app
+    spec:
+      containers:
+      - name: ayush-app
+        image: nginx
+        ports:
+        - containerPort: 80
